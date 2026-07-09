@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit & Co. — Planets for Sale</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="banner">Free interstellar shipping on orders over 3 planets</div>
+
+    <header>
+        <div class="logo">ORBIT<span>&amp;CO.</span></div>
+        <nav>
+            <a href="#">Catalog</a>
+            <a href="#">About</a>
+            <a href="#">Shipping</a>
+            <a href="#">Support</a>
+        </nav>
+        <button class="cart-btn">Cart (0)</button>
+    </header>
+
+    <div class="hero">
+        <h1>Own a piece of the solar system</h1>
+        <p>Genuine, ethically-sourced planets. No returns, no refunds, no actual delivery — but the thought counts.</p>
+    </div>
+
+    <main>
+        <div class="section-title">Available Planets (Hover over each card)</div>
+        <div class="grid">
+
+            <div class="card" id="card-mercury">
+                <img src="images/mercury.png" alt="Mercury">
+                <div class="card-body">
+                    <span class="badge">Rocky · Small</span>
+                    <h3>Mercury</h3>
+                    <h2>Goes transparent</h2>
+                    <p class="desc">Closest to the sun and proud of it. Great starter planet for beginners.</p>
+                    <div class="price-row">
+                        <span class="price">$4,200</span>
+                        <span class="stock">In stock</span>
+                    </div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card" id="card-venus">
+                <img src="images/venus.png" alt="Venus">
+                <div class="card-body">
+                    <span class="badge">Rocky · Cloudy</span>
+                    <h3>Venus</h3>
+                    <h2>Changes color</h2>
+                    <p class="desc">Runs hot, looks stunning, comes with a permanent golden haze filter.</p>
+                    <div class="price-row">
+                        <span class="price">$6,750</span>
+                        <span class="stock">In stock</span>
+                    </div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card" id="card-mars">
+                <img src="images/mars.png" alt="Mars">
+                <div class="card-body">
+                    <span class="badge">Rocky · Red</span>
+                    <h3>Mars</h3>
+                    <h2>Tilts</h2>
+                    <p class="desc">Our best seller. Comes pre-painted, no repainting necessary.</p>
+                    <div class="price-row">
+                        <span class="price">$8,900</span>
+                        <span class="stock">Only 2 left</span>
+                    </div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card" id="card-jupiter">
+                <img src="images/jupiter.png" alt="Jupiter">
+                <div class="card-body">
+                    <span class="badge">Gas Giant · Large</span>
+                    <h3>Jupiter</h3>
+                    <h2>Grows</h2>
+                    <p class="desc">Big enough to protect the rest of your collection. Storms included at no extra cost.</p>
+                    <div class="price-row">
+                        <span class="price">$15,300</span>
+                        <span class="stock">In stock</span>
+                    </div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Orbit &amp; Co. — Purveyors of Fine Celestial Bodies</p>
+        <p>This is a fictional store. No planets are actually sold, shipped, or owned.</p>
+    </footer>
+
+    <script>
+        const timing = {
+            duration: 400,
+            fill: "forwards"
+        };
+
+        function onHover(id, inFrames, outFrames) {
+            const el = document.getElementById(id);
+            el.addEventListener("mouseenter", () => {
+                el.animate(inFrames, timing);
+            });
+            el.addEventListener("mouseleave", () => {
+                el.animate(outFrames, timing);
+            });
+        }
+
+        // Mercury - opacity animation
+        onHover("card-mercury", {
+            opacity: [1, 0.5]
+        }, {
+            opacity: [0.5, 1]
+        });
+
+        // Venus - color animation
+        onHover("card-venus", {
+            backgroundColor: ["#1f2350", "#5a3d1f"]
+        }, {
+            backgroundColor: ["#5a3d1f", "#1f2350"]
+        });
+
+        // Mars - rotation animation
+        onHover("card-mars", {
+            transform: ["rotate(0deg)", "rotate(6deg)"]
+        }, {
+            transform: ["rotate(6deg)", "rotate(0deg)"]
+        });
+
+        // Jupiter - size animation
+        onHover("card-jupiter", {
+            transform: ["scale(1)", "scale(1.06)"]
+        }, {
+            transform: ["scale(1.06)", "scale(1)"]
+        });
+    </script>
+
+</body>
+
+</html>
